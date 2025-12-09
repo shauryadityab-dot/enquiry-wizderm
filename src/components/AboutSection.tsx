@@ -15,7 +15,7 @@ const stats = [
   },
   {
     icon: Award,
-    number: "4.83+ Stars",
+    number: "4.83+ ⭐",
     label: "On Google Maps",
     description: "Over 3000 Positive Reviews",
   },

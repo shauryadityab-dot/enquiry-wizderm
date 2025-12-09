@@ -66,7 +66,7 @@ const HeroSection = () => {
               { number: "115+", label: "Expert Dermatologists" },
               { number: "7", label: "Clinics Across India" },
               { number: "1.36L+", label: "Patients Treated" },
-              { number: "4.83+ Stars", label: "On Google Maps" },
+              { number: "4.83+ ⭐", label: "On Google Maps" },
             ].map((stat, index) => (
               <div key={index} className="text-center p-4 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10">
                 <div className="text-2xl md:text-3xl font-bold text-primary-foreground mb-1">

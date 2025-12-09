@@ -15,7 +15,9 @@ const Header = () => {
   }, []);
 
   const scrollToForm = () => {
-    document.getElementById("appointment-form")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("appointment-form")
+      ?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
@@ -29,17 +31,24 @@ const Header = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <span className={`text-2xl font-display font-bold transition-colors ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            }`}>
-              Wizderm
-            </span>
+            <img
+              className="w-48 h-10 transition-all duration-300"
+              src={
+                isScrolled
+                  ? "/assets/wizderm_logo_purple.png"
+                  : "/assets/Wizderm White Logo.png"
+              }
+              alt="Wizderm Skin And Hair Clinic India Logo"
+            />
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+         
+
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-4">
+             <nav className="hidden md:flex items-center gap-8 mr-4">
             <a
               href="#treatments"
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -65,10 +74,7 @@ const Header = () => {
               Results
             </a>
           </nav>
-
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <a 
+            <a
               href="tel:+919876543210"
               className={`flex items-center gap-2 text-sm font-medium transition-colors ${
                 isScrolled ? "text-foreground" : "text-primary-foreground/90"
@@ -77,8 +83,8 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               +91 900 757 4000
             </a>
-            <Button 
-              variant={isScrolled ? "default" : "hero"} 
+            <Button
+              variant={isScrolled ? "default" : "hero"}
               size="default"
               onClick={scrollToForm}
             >
@@ -90,12 +96,16 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled 
-                ? "text-foreground hover:bg-muted" 
+              isScrolled
+                ? "text-foreground hover:bg-muted"
                 : "text-primary-foreground hover:bg-primary-foreground/10"
             }`}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -124,14 +134,19 @@ const Header = () => {
               >
                 Results
               </a>
-              <a 
+              <a
                 href="tel:+919876543210"
                 className="flex items-center gap-2 text-muted-foreground py-2"
               >
                 <Phone className="w-4 h-4" />
                 +91 98765 43210
               </a>
-              <Button variant="hero" size="lg" className="mt-2" onClick={scrollToForm}>
+              <Button
+                variant="hero"
+                size="lg"
+                className="mt-2"
+                onClick={scrollToForm}
+              >
                 Book Appointment
               </Button>
             </nav>

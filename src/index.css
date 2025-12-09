@@ -15,7 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 200 25% 15%;
 
-    --primary: 175 65% 35%;
+    /* CHANGED: primary from teal/green to purple */
+    --primary: 290 55% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 40 50% 96%;
@@ -32,17 +33,25 @@
 
     --border: 40 20% 88%;
     --input: 40 20% 88%;
-    --ring: 175 65% 35%;
+
+    /* CHANGED: ring from teal/green to same purple */
+    --ring: 290 55% 40%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(175 65% 35%) 0%, hsl(185 55% 28%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(32 85% 55%) 100%);
+    /* already purple, kept as-is from your last edit */
+    --gradient-hero: linear-gradient(135deg, #b63390 0%, #7a2b8f 50%, #4e1f7f 100%);
+    --gradient-purple: linear-gradient(135deg, #431947 0%, #512557 50%, #3f1f45 100%);
+    --gradient-gold: linear-gradient(135deg, #ddb07e 0%, #ffddab 50%, #e6d5bd 100%);
+
     --gradient-subtle: linear-gradient(180deg, hsl(40 33% 99%) 0%, hsl(40 40% 97%) 100%);
+
     --shadow-soft: 0 4px 20px -2px hsl(200 25% 15% / 0.08);
+
+    /* CHANGED: glow shadow tint to purple instead of green */
     --shadow-elevated: 0 12px 40px -8px hsl(200 25% 15% / 0.12);
-    --shadow-glow: 0 0 40px hsl(175 65% 35% / 0.15);
+    --shadow-glow: 0 0 40px hsl(290 55% 40% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,7 +73,8 @@
     --popover: 200 25% 12%;
     --popover-foreground: 40 33% 98%;
 
-    --primary: 175 65% 45%;
+    /* CHANGED: dark primary also to purple, a bit brighter */
+    --primary: 290 60% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 200 20% 18%;
@@ -81,7 +91,9 @@
 
     --border: 200 20% 22%;
     --input: 200 20% 22%;
-    --ring: 175 65% 45%;
+
+    /* CHANGED: ring in dark theme to purple too */
+    --ring: 290 60% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -93,6 +105,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+
 
 @layer base {
   * {
@@ -114,6 +127,11 @@
     background-image: var(--gradient-hero);
   }
 
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
+  }
+
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-gold);
@@ -121,6 +139,10 @@
 
   .bg-gradient-hero {
     background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-purple {
+    background-image: var(--gradient-purple);
   }
 
   .bg-gradient-gold {
