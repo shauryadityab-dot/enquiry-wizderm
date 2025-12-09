@@ -86,39 +86,42 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <section id="appointment-form" className="py-20 bg-gradient-subtle">
-      <div className="container">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <Calendar className="w-4 h-4" />
-                Book Your Consultation
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                Take the First Step Towards{" "}
-                <span className="text-primary">Healthy Skin & Hair</span>
-              </h2>
-              
-              <p className="text-lg text-muted-foreground">
-                Fill out the form and our team will reach out to confirm your appointment with one of our expert dermatologists.
-              </p>
-
-              <div className="space-y-4 pt-4">
-                {[
-                  "Customized Treatment Plans.",
-                  "Expert Dermatologist Consultation (MD/MBBS).",
-                  "US-FDA Approved Procedures and Equipment.",
-                  "Utmost Care Delivered by Highly Trained Therapists.",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
+    <div className="container mx-auto">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-center">
+          {/* Left Content */}
+          <div className="space-y-6 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <Calendar className="w-4 h-4" />
+              Book Your Consultation
             </div>
+
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground leading-snug">
+              Take the First Step Towards{" "}
+              <span className="text-primary">Healthy Skin &amp; Hair</span>
+            </h2>
+
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Fill out the form and our team will reach out to confirm your
+              appointment with one of our expert dermatologists.
+            </p>
+
+            <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
+              {[
+                "Customized Treatment Plans.",
+                "Expert Dermatologist Consultation (MD/MBBS).",
+                "US-FDA Approved Procedures and Equipment.",
+                "Utmost Care Delivered by Highly Trained Therapists.",
+              ].map((item, index) => (
+                <div key={index} className="flex items-start gap-3 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-foreground text-sm sm:text-base">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
             {/* Form Card */}
             <div className="bg-card rounded-2xl shadow-elevated p-8 border border-border">
