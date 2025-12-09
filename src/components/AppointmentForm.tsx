@@ -34,19 +34,37 @@ const AppointmentForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyhTRs8Ik1x4BV5NSW0Hk0LZgkCc18OCwHnvy5cqep4eYu6Qqx3Gw058f5-KezHbbM_Yg/exec";
+
+    const body = new URLSearchParams({
+      fullName: formData.fullName,
+      mobile: formData.mobile,
+      email: formData.email,
+      location: formData.location,
+      timing: formData.timing,
+    });
+
+    await fetch(scriptUrl, {
+      method: "POST",
+      mode: "no-cors", // <- key
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body,
+    });
+
+    // You won't be able to read the response in no-cors mode
     toast({
       title: "Appointment Request Submitted!",
-      description: "Our team will contact you within 24 hours to confirm your appointment.",
+      description:
+        "Our team will contact you within 24 hours to confirm your appointment.",
     });
-    
-    setIsSubmitting(false);
+
     setFormData({
       fullName: "",
       mobile: "",
@@ -54,7 +72,17 @@ const AppointmentForm = () => {
       location: "",
       timing: "",
     });
-  };
+  } catch (err) {
+    console.error(err);
+    toast({
+      title: "Something went wrong",
+      description: "Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section id="appointment-form" className="py-20 bg-gradient-subtle">
