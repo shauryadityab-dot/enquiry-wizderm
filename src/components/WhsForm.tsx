@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar, User, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 
 const WhsForm = () => {
   const { toast } = useToast();
@@ -72,22 +73,32 @@ const WhsForm = () => {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-
+          {/* Treatment Time */}
           {/* Treatment Time */}
           <div className="space-y-2">
-            <Label htmlFor="treatmentTime">Treatment Time</Label>
+            <Label htmlFor="treatmentTime" className="text-sm font-medium">
+              Treatment Time
+            </Label>
+
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <Input
-                id="treatmentTime"
-                placeholder="e.g. 3 PM, 12:30 PM"
-                className="pl-11 h-12"
+              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground z-10" />
+
+              <Select
                 value={formData.treatmentTime}
-                onChange={(e) =>
-                  setFormData({ ...formData, treatmentTime: e.target.value })
+                onValueChange={(value) =>
+                  setFormData({ ...formData, treatmentTime: value })
                 }
-                required
-              />
+              >
+                <SelectTrigger className="pl-11 h-12">
+                  <SelectValue placeholder="Select a time" />
+                </SelectTrigger>
+
+                <SelectContent className="bg-card border-border">
+                  <SelectItem value="This Week">This Week</SelectItem>
+                  <SelectItem value="Next Week">Next Week</SelectItem>
+                  <SelectItem value="Next Month">Next Month</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
 

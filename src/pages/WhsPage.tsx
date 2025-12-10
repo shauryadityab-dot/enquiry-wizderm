@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import WhsForm from "@/components/WhsForm";
 
@@ -74,6 +75,7 @@ const Whs = () => {
             <WhsForm />
           </div>
         </section>
+        <Footer />  
       </main>
     </>
   );
