@@ -52,7 +52,7 @@ const Whs = () => {
         </section>
 
         {/* Form Section */}
-        <section id="whs-form" className="py-16 bg-gradient-subtle">
+        <section id="whs-form" className="bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <WhsForm />
           </div>

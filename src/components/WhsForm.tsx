@@ -4,7 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar, User, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 const WhsForm = () => {
   const { toast } = useToast();
@@ -23,16 +29,15 @@ const WhsForm = () => {
     setIsSubmitting(true);
 
     try {
-      const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbyhTRs8Ik1x4BV5NSW0Hk0LZgkCc18OCwHnvy5cqep4eYu6Qqx3Gw058f5-KezHbbM_Yg/exec";
+      const scriptUrl ="https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
 
       const body = new URLSearchParams({
+        formId: "whs", // 👈 identify this form
         treatmentTime: formData.treatmentTime,
         fullName: formData.fullName,
         mobile: formData.mobile,
         email: formData.email,
       });
-
       await fetch(scriptUrl, {
         method: "POST",
         mode: "no-cors",

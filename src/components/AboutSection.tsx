@@ -38,7 +38,8 @@ const AboutSection = () => {
               Why Choose <span className="text-primary">Wizderm</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              India's leading dermatology chain combining expert care with cutting-edge technology for transformative results.
+              India's leading dermatology chain combining expert care with
+              cutting-edge technology for transformative results.
             </p>
           </div>
 
@@ -78,19 +79,38 @@ const AboutSection = () => {
             <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider font-medium">
               Our Commitment to Quality
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {/* Placeholder for partner/certification logos */}
-              <div className="px-6 py-3 rounded-lg bg-muted/50 text-muted-foreground font-medium">
-                Times Group Award
+
+            <div className="flex flex-nowrap justify-center items-center gap-8 ">
+              <div className="px-6 py-3 rounded-lg  font-medium">
+                <img
+                  src="/assets/logo.png"
+                  alt="Times Group Award"
+                  className="w-16 h-16 object-contain"
+                />
               </div>
-              <div className="px-6 py-3 rounded-lg bg-muted/50 text-muted-foreground font-medium">
-                US-FDA Approved
+
+              <div className="px-6 py-3 rounded-lg  font-medium">
+                <img
+                  src="/assets/Logo2.png"
+                  alt=""
+                  className="w-16 h-16 object-contain"
+                />
               </div>
-              <div className="px-6 py-3 rounded-lg bg-muted/50 text-muted-foreground font-medium">
-                ISO Certified
+
+              <div className="px-6 py-3 rounded-lg  font-medium">
+                <img
+                  src="/assets/Logo3.png"
+                  alt=""
+                  className="w-16 h-16 object-contain"
+                />
               </div>
-              <div className="px-6 py-3 rounded-lg bg-muted/50 text-muted-foreground font-medium">
-                UCARE Centre of Excellence
+
+              <div className="px-6 py-3 rounded-lg  font-medium">
+                <img
+                  src="/assets/Logo4.png"
+                  alt=""
+                  className="w-16 h-16 object-contain"
+                />
               </div>
             </div>
           </div>

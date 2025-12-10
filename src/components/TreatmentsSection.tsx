@@ -3,49 +3,55 @@ import { Button } from "@/components/ui/button";
 
 const treatments = [
   {
-    icon: Sparkles,
+    icon: "/assets/acne.png",
     title: "Acne & Acne Scars",
-    description: "Professional dermatological treatments that reduce active acne, prevent new breakouts, and fade stubborn acne scars with advanced lasers and peels.",
+    description:
+      "Professional dermatological treatments that reduce active acne, prevent new breakouts, and fade stubborn acne scars with advanced lasers and peels.",
     color: "from-rose-500/20 to-pink-500/20",
   },
   {
-    icon: Sun,
+    icon: "/assets/pigmentation.png",
     title: "Pigmentation",
-    description: "Targeted laser and medical-grade treatments to reduce dark spots, uneven tone, melasma, and sun-induced pigmentation for visibly brighter skin.",
+    description:
+      "Targeted laser and medical-grade treatments to reduce dark spots, uneven tone, melasma, and sun-induced pigmentation for visibly brighter skin.",
     color: "from-amber-500/20 to-orange-500/20",
   },
   {
-    icon: Zap,
+    icon: "/assets/laser.png",
     title: "Laser Hair Reduction",
-    description: "Pain-free, long-term hair reduction using US-FDA approved triple-wavelength Soprano Ice Platinum lasers for smoother, hair-free skin across all body areas.",
+    description:
+      "Pain-free, long-term hair reduction using US-FDA approved triple-wavelength Soprano Ice Platinum lasers for smoother, hair-free skin across all body areas.",
     color: "from-violet-500/20 to-purple-500/20",
   },
   {
-    icon: Clock,
+    icon: "/assets/botox.png",
     title: "Anti-Ageing",
-    description: "Scientifically backed anti-ageing solutions including Botox, Fillers, and Peels that soften wrinkles, restore lost volume, and improve skin texture.",
+    description:
+      "Scientifically backed anti-ageing solutions including Botox, Fillers, and Peels that soften wrinkles, restore lost volume, and improve skin texture.",
     color: "from-teal-500/20 to-cyan-500/20",
   },
   {
-    icon: Scissors,
+    icon: "/assets/hair.png",
     title: "Hair Loss & PRP",
-    description: "Dermatologist-led hair fall diagnosis with advanced PRP/GFC therapies that strengthen roots, reactivate follicles, and promote thicker hair growth.",
+    description:
+      "Dermatologist-led hair fall diagnosis with advanced PRP/GFC therapies that strengthen roots, reactivate follicles, and promote thicker hair growth.",
     color: "from-emerald-500/20 to-green-500/20",
   },
   {
-    icon: Eraser,
+    icon: "/assets/tattoo.png",
     title: "Tattoo Removal",
-    description: "The Q-Switched Spectra XT laser safely and effectively breaks down tattoo ink, fading unwanted tattoos with minimal discomfort and downtime.",
+    description:
+      "The Q-Switched Spectra XT laser safely and effectively breaks down tattoo ink, fading unwanted tattoos with minimal discomfort and downtime.",
     color: "from-slate-500/20 to-gray-500/20",
   },
   {
-    icon: Stethoscope,
+    icon: "/assets/doctor.png",
     title: "Dermatologist Consultations",
-    description: "Consult with expert dermatologists for accurate diagnosis and personalised skin and hair treatment plans tailored to your concerns.",
+    description:
+      "Consult with expert dermatologists for accurate diagnosis and personalised skin and hair treatment plans tailored to your concerns.",
     color: "from-blue-500/20 to-indigo-500/20",
   },
 ];
-
 const TreatmentsSection = () => {
   const scrollToForm = () => {
     document.getElementById("appointment-form")?.scrollIntoView({ behavior: "smooth" });
@@ -82,8 +88,12 @@ const TreatmentsSection = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <treatment.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all duration-300 overflow-hidden">
+                    <img
+                      src={treatment.icon}
+                      alt={treatment.title}
+                      className="w-7 h-7 object-contain group-hover:brightness-60"
+                    />
                   </div>
 
                   {/* Title */}

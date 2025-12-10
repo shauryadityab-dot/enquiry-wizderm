@@ -39,9 +39,10 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbyhTRs8Ik1x4BV5NSW0Hk0LZgkCc18OCwHnvy5cqep4eYu6Qqx3Gw058f5-KezHbbM_Yg/exec";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
 
     const body = new URLSearchParams({
+      formId: "appointment",
       fullName: formData.fullName,
       mobile: formData.mobile,
       email: formData.email,
@@ -125,7 +126,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
             {/* Form Card */}
             <div className="bg-card rounded-2xl shadow-elevated p-8 border border-border">
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} autoComplete="off" className="space-y-5">
                 <div className="space-y-2">
                   <Label htmlFor="fullName" className="text-sm font-medium">
                     Full Name
