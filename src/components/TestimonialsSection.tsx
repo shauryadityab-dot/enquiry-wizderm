@@ -3,27 +3,27 @@ import { Play, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Priya Sharma",
+    name: "Dr. Koushik Lahiri",
     role: "Senior Dermatologist, Wizderm Kolkata",
-    thumbnail: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop",
+    thumbnail: "https://i.ytimg.com/vi/LXtbFehuM2M/hqdefault.jpg",
     message: "At Wizderm, we believe in providing personalized care with the most advanced technology available.",
-    type: "video",
+    videoUrl: "https://youtu.be/LXtbFehuM2M",
   },
   {
     id: 2,
-    name: "Dr. Rahul Gupta",
+    name: "Dr. Harsha Sarawgi Gupta",
     role: "Hair Specialist, Wizderm Hyderabad",
-    thumbnail: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop",
+    thumbnail: "https://i.ytimg.com/vi/v619IxU5SGs/hqdefault.jpg",
     message: "Our PRP treatments have helped thousands of patients regain their confidence with fuller, healthier hair.",
-    type: "video",
+    videoUrl: "https://youtu.be/v619IxU5SGs",
   },
   {
     id: 3,
-    name: "Dr. Ananya Das",
+    name: "Dr. Ishad Aggarwal",
     role: "Laser Specialist, Wizderm Ahmedabad",
-    thumbnail: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=300&fit=crop",
+    thumbnail: "https://i.ytimg.com/vi/ZV31y2ftXc8/hqdefault.jpg",
     message: "The Soprano Ice Platinum technology we use is pain-free and highly effective for all skin types.",
-    type: "video",
+    videoUrl: "https://youtu.be/ZV31y2ftXc8",
   },
 ];
 
@@ -32,6 +32,7 @@ const TestimonialsSection = () => {
     <section className="py-20 bg-card">
       <div className="container">
         <div className="max-w-6xl mx-auto">
+          
           {/* Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -49,9 +50,12 @@ const TestimonialsSection = () => {
           {/* Video Grid */}
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial) => (
-              <div
+              <a
                 key={testimonial.id}
-                className="group relative rounded-2xl overflow-hidden bg-background border border-border hover:shadow-elevated transition-all duration-300"
+                href={testimonial.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden bg-background border border-border hover:shadow-elevated transition-all duration-300 block"
               >
                 {/* Video Thumbnail */}
                 <div className="relative aspect-video">
@@ -60,7 +64,7 @@ const TestimonialsSection = () => {
                     alt={testimonial.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  
+
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/40 transition-colors">
                     <div className="w-16 h-16 rounded-full bg-primary-foreground/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-elevated">
@@ -81,9 +85,10 @@ const TestimonialsSection = () => {
                     "{testimonial.message}"
                   </p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
+
         </div>
       </div>
     </section>
