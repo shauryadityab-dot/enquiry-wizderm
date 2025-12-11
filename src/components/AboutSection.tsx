@@ -81,7 +81,7 @@ const AboutSection = () => {
             </p>
 
             <div className="flex flex-nowrap justify-center items-center gap-8 ">
-              <div className="px-6 py-3 rounded-lg  font-medium">
+              <div className="md:px-6 md:py-3 rounded-lg  font-medium">
                 <img
                   src="/assets/logo.png"
                   alt="Times Group Award"
@@ -89,7 +89,7 @@ const AboutSection = () => {
                 />
               </div>
 
-              <div className="px-6 py-3 rounded-lg  font-medium">
+              <div className="md:px-6 md:py-3 rounded-lg  font-medium">
                 <img
                   src="/assets/Logo2.png"
                   alt=""
@@ -97,7 +97,7 @@ const AboutSection = () => {
                 />
               </div>
 
-              <div className="px-6 py-3 rounded-lg  font-medium">
+              <div className="md:px-6 md:py-3 rounded-lg  font-medium">
                 <img
                   src="/assets/Logo3.png"
                   alt=""
@@ -105,7 +105,7 @@ const AboutSection = () => {
                 />
               </div>
 
-              <div className="px-6 py-3 rounded-lg  font-medium">
+              <div className="md:px-6 md:py-3 rounded-lg  font-medium">
                 <img
                   src="/assets/Logo4.png"
                   alt=""

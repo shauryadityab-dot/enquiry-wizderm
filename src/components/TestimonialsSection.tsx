@@ -12,7 +12,7 @@ const testimonials = [
   {
     id: 2,
     name: "Dr. Harsha Sarawgi Gupta",
-    role: "Hair Specialist, Wizderm Hyderabad",
+    role: "Consultant Dermatologist, Wizderm Hyderabad",
     thumbnail: "https://i.ytimg.com/vi/v619IxU5SGs/hqdefault.jpg",
     message: "Our PRP treatments have helped thousands of patients regain their confidence with fuller, healthier hair.",
     videoUrl: "https://youtu.be/v619IxU5SGs",
