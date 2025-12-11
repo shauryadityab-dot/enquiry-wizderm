@@ -58,7 +58,7 @@ const beforeAfterImages = [
     before: "/assets/Tattoo removal before.png",
     after: "/assets/Tattoo removal after.png",
     treatment: "Tattoo Removal",
-    duration: "1 session",
+    duration: "5 sessions",
   },
 ];
 
