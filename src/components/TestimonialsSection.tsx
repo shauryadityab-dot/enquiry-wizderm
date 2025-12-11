@@ -6,7 +6,7 @@ const testimonials = [
     name: "Dr. Koushik Lahiri",
     role: "Senior Dermatologist, Wizderm Kolkata",
     thumbnail: "https://i.ytimg.com/vi/LXtbFehuM2M/hqdefault.jpg",
-    message: "At Wizderm, we believe in providing personalized care with the most advanced technology available.",
+    message: "At Wizderm, we believe in Treating Vitiligo with the treatments that suit your skin.",
     videoUrl: "https://youtu.be/LXtbFehuM2M",
   },
   {
@@ -14,7 +14,7 @@ const testimonials = [
     name: "Dr. Harsha Sarawgi Gupta",
     role: "Consultant Dermatologist, Wizderm Hyderabad",
     thumbnail: "https://i.ytimg.com/vi/v619IxU5SGs/hqdefault.jpg",
-    message: "Our PRP treatments have helped thousands of patients regain their confidence with fuller, healthier hair.",
+    message: "Scars are of various types, and every scar has to be treated in a customized manner owing to the cause and depth of the scar.",
     videoUrl: "https://youtu.be/v619IxU5SGs",
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     name: "Dr. Ishad Aggarwal",
     role: "Laser Specialist, Wizderm Ahmedabad",
     thumbnail: "https://i.ytimg.com/vi/ZV31y2ftXc8/hqdefault.jpg",
-    message: "The Soprano Ice Platinum technology we use is pain-free and highly effective for all skin types.",
+    message:"I believe that Good Skin enables you to put your Best Foot Forward",
     videoUrl: "https://youtu.be/ZV31y2ftXc8",
   },
 ];

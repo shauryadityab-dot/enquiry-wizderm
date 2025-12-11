@@ -1,26 +1,26 @@
-import { Users, MapPin, Award, Heart } from "lucide-react";
+import { Users, MapPin, Award, Heart, Hospital } from "lucide-react";
 
 const stats = [
   {
-    icon: Users,
+    icon: "/assets/Patient.png",
     number: "115+",
     label: "Expert Dermatologists",
     description: "Board-certified specialists",
   },
   {
-    icon: MapPin,
+    icon: "/assets/clinic.png",
     number: "7",
     label: "Clinics Across India",
     description: "Kolkata, Siliguri, Ahmedabad, Guwahati, Hyderabad",
   },
   {
-    icon: Award,
+    icon: "/assets/doctor.png",
     number: "4.83+ ⭐",
     label: "On Google Maps",
     description: "Over 3000 Positive Reviews",
   },
   {
-    icon: Heart,
+    icon: "/assets/review.png",
     number: "1,36,957+",
     label: "Patients Treated",
     description: "Trusted by thousands",
@@ -52,7 +52,11 @@ const AboutSection = () => {
               >
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <stat.icon className="w-7 h-7 text-primary" />
+                                      <img
+                      src={stat.icon}
+                      alt={stat.label}
+                      className="w-7 h-7 object-contain group-hover:brightness-60"
+                    />
                 </div>
 
                 {/* Content */}

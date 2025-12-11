@@ -29,7 +29,8 @@ const WhsForm = () => {
     setIsSubmitting(true);
 
     try {
-      const scriptUrl ="https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
+      const scriptUrl =
+        "https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
 
       const body = new URLSearchParams({
         formId: "whs", // 👈 identify this form
@@ -135,6 +136,8 @@ const WhsForm = () => {
                 type="tel"
                 placeholder="+91 XXXXX XXXXX"
                 className="pl-11 h-12"
+                minLength={10}
+                maxLength={10}
                 value={formData.mobile}
                 onChange={(e) =>
                   setFormData({ ...formData, mobile: e.target.value })

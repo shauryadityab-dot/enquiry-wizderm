@@ -2,8 +2,21 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, User, Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Calendar,
+  User,
+  Phone,
+  Mail,
+  MapPin,
+  CheckCircle2,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const clinicLocations = [
@@ -34,99 +47,104 @@ const AppointmentForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
+    try {
+      const scriptUrl =
+        "https://script.google.com/macros/s/AKfycbxhBsOZiMLgoL64eYCqc1WrkPSmlvcrr7uP83MJL3wfNxDwOP8ytntd-uIJc4Lcpoqf/exec";
 
-    const body = new URLSearchParams({
-      formId: "appointment",
-      fullName: formData.fullName,
-      mobile: formData.mobile,
-      email: formData.email,
-      location: formData.location,
-      timing: formData.timing,
-    });
+      const body = new URLSearchParams({
+        formId: "appointment",
+        fullName: formData.fullName,
+        mobile: formData.mobile,
+        email: formData.email,
+        location: formData.location,
+        timing: formData.timing,
+      });
 
-    await fetch(scriptUrl, {
-      method: "POST",
-      mode: "no-cors", // <- key
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body,
-    });
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors", // <- key
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body,
+      });
 
-    // You won't be able to read the response in no-cors mode
-    toast({
-      title: "Appointment Request Submitted!",
-      description:
-        "Our team will contact you within 24 hours to confirm your appointment.",
-    });
+      // You won't be able to read the response in no-cors mode
+      toast({
+        title: "Appointment Request Submitted!",
+        description:
+          "Our team will contact you within 24 hours to confirm your appointment.",
+      });
 
-    setFormData({
-      fullName: "",
-      mobile: "",
-      email: "",
-      location: "",
-      timing: "",
-    });
-  } catch (err) {
-    console.error(err);
-    toast({
-      title: "Something went wrong",
-      description: "Please try again.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+      setFormData({
+        fullName: "",
+        mobile: "",
+        email: "",
+        location: "",
+        timing: "",
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="appointment-form" className="py-20 bg-gradient-subtle">
-    <div className="container mx-auto">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-center">
-          {/* Left Content */}
-          <div className="space-y-6 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              <Calendar className="w-4 h-4" />
-              Book Your Consultation
+      <div className="container mx-auto">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-center">
+            {/* Left Content */}
+            <div className="space-y-6 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <Calendar className="w-4 h-4" />
+                Book Your Consultation
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground leading-snug">
+                Take the First Step Towards{" "}
+                <span className="text-primary">Healthy Skin &amp; Hair</span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-muted-foreground">
+                Fill out the form and our team will reach out to confirm your
+                appointment with one of our expert dermatologists.
+              </p>
+
+              <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
+                {[
+                  "Customized Treatment Plans.",
+                  "Expert Dermatologist Consultation (MD/MBBS).",
+                  "US-FDA Approved Procedures and Equipment.",
+                  "Utmost Care Delivered by Highly Trained Therapists.",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-3 text-left">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-foreground text-sm sm:text-base">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground leading-snug">
-              Take the First Step Towards{" "}
-              <span className="text-primary">Healthy Skin &amp; Hair</span>
-            </h2>
-
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Fill out the form and our team will reach out to confirm your
-              appointment with one of our expert dermatologists.
-            </p>
-
-            <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
-              {[
-                "Customized Treatment Plans.",
-                "Expert Dermatologist Consultation (MD/MBBS).",
-                "US-FDA Approved Procedures and Equipment.",
-                "Utmost Care Delivered by Highly Trained Therapists.",
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3 text-left">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-foreground text-sm sm:text-base">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
 
             {/* Form Card */}
             <div className="bg-card rounded-2xl shadow-elevated p-8 border border-border">
-              <form onSubmit={handleSubmit} autoComplete="off" className="space-y-5">
+              <form
+                onSubmit={handleSubmit}
+                autoComplete="off"
+                className="space-y-5"
+              >
                 <div className="space-y-2">
                   <Label htmlFor="fullName" className="text-sm font-medium">
                     Full Name
@@ -138,7 +156,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                       placeholder="Enter your full name"
                       className="pl-11 h-12"
                       value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, fullName: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -156,7 +176,15 @@ const handleSubmit = async (e: React.FormEvent) => {
                       placeholder="+91 XXXXX XXXXX"
                       className="pl-11 h-12"
                       value={formData.mobile}
-                      onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                      minLength={10}
+                      maxLength={10}
+                      onChange={(e) => {
+                        // Allow only digits + limit to 10
+                        const value = e.target.value
+                          .replace(/\D/g, "")
+                          .slice(0, 10);
+                        setFormData({ ...formData, mobile: value });
+                      }}
                       required
                     />
                   </div>
@@ -174,7 +202,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                       placeholder="you@example.com"
                       className="pl-11 h-12"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -188,7 +218,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground z-10" />
                     <Select
                       value={formData.location}
-                      onValueChange={(value) => setFormData({ ...formData, location: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, location: value })
+                      }
                     >
                       <SelectTrigger className="pl-11 h-12">
                         <SelectValue placeholder="Choose a clinic" />
@@ -212,7 +244,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground z-10" />
                     <Select
                       value={formData.timing}
-                      onValueChange={(value) => setFormData({ ...formData, timing: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, timing: value })
+                      }
                     >
                       <SelectTrigger className="pl-11 h-12">
                         <SelectValue placeholder="Select preferred timing" />
@@ -228,10 +262,10 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                 </div>
 
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  size="xl" 
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="xl"
                   className="w-full mt-6"
                   disabled={isSubmitting}
                 >
@@ -239,7 +273,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </Button>
 
                 <p className="text-xs text-center text-muted-foreground pt-2">
-                  By submitting, you agree to our Terms of Service and Privacy Policy
+                  By submitting, you agree to our Terms of Service and Privacy
+                  Policy
                 </p>
               </form>
             </div>
