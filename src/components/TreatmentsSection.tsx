@@ -27,7 +27,7 @@ const treatments = [
     icon: "/assets/botox.png",
     title: "Anti-Ageing",
     description:
-      "Scientifically backed anti-ageing solutions including Botox, Fillers, and Peels that soften wrinkles, restore lost volume, and improve skin texture.",
+      "Scientifically backed anti-ageing solutions including Fillers, and Peels that soften wrinkles, restore lost volume, and improve skin texture.",
     color: "from-teal-500/20 to-cyan-500/20",
   },
   {
