@@ -141,6 +141,7 @@ const AppointmentForm = () => {
             {/* Form Card */}
             <div className="bg-card rounded-2xl shadow-elevated p-8 border border-border">
               <form
+                id="appointment-form"
                 onSubmit={handleSubmit}
                 autoComplete="off"
                 className="space-y-5"

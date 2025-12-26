@@ -78,7 +78,7 @@ const WhsForm = () => {
           WHS Consultation Form
         </h2>
 
-        <form onSubmit={handleSubmit} autoComplete="off" className="space-y-5">
+        <form id="whs-form" onSubmit={handleSubmit} autoComplete="off" className="space-y-5">
           {/* Treatment Time */}
           {/* Treatment Time */}
           <div className="space-y-2">
